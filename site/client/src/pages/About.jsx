@@ -14,10 +14,7 @@ export default function About() {
 
       {about && (
         <article className="about">
-          {/* The text is written in Markdown on /v1/Admin/About; the C# app
-              turns it into cleaned HTML */}
-          <div className="prose" dangerouslySetInnerHTML={{ __html: about.bodyHtml }} />
-
+          {/* The CV links come first, under the title */}
           <div className="cv-links">
             {about.cvLinks.map((cv) => (
               <a key={cv.url} className="button" href={cv.url}>
@@ -25,6 +22,10 @@ export default function About() {
               </a>
             ))}
           </div>
+
+          {/* The text is written in Markdown on /v1/Admin/About; the C# app
+              turns it into cleaned HTML */}
+          <div className="prose" dangerouslySetInnerHTML={{ __html: about.bodyHtml }} />
         </article>
       )}
     </>

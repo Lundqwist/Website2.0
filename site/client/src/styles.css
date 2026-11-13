@@ -337,11 +337,9 @@ a:hover {
   gap: 1rem;
 }
 
-.cv-links {
-  margin-top: 2.5rem;
-}
-
-/* The buttons under a portfolio item's title */
+/* The buttons under the page title: the CVs on About, the links on a
+   portfolio item's page */
+.cv-links,
 .item-links {
   margin: -0.5rem 0 1.75rem;
 }
