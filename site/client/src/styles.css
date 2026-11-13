@@ -412,6 +412,55 @@ a:hover {
   gap: 1rem;
 }
 
+/* ── Projects ───────────────────────────────────────────────────────────── */
+
+.project-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.5rem;
+  max-width: 44rem;
+}
+
+.project-card {
+  padding: 1.5rem 1.75rem;
+  background: #0f2550;
+  border: 1px solid var(--navy-light);
+  border-radius: 4px;
+}
+
+.project-card p {
+  margin: 0.75rem 0 0;
+}
+
+.project-card .button {
+  margin-top: 1.25rem;
+}
+
+.project-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.project-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--gold);
+}
+
+.project-status {
+  font-size: 0.875rem;
+  color: var(--gold-soft);
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  padding: 0.1rem 0.75rem;
+}
+
 /* The buttons under the page title: the CVs on About, the links on a
    portfolio item's page */
 .cv-links,
