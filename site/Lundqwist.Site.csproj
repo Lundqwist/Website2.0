@@ -1,0 +1,40 @@
+<!--
+  Lundqwist.Site.csproj: the new lundqwist.se.
+  A small ASP.NET Core app that
+    - answers /api/... with JSON read from MariaDB through Entity Framework Core,
+    - serves the built React app (client/ -> wwwroot/),
+    - passes /v1/... on to the first version of the site (../v1).
+-->
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <!-- Same .NET version as v1, so both run on the same container image -->
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Lundqwist.Site</RootNamespace>
+    <!-- Same id as v1: both sites read the same local "dotnet user-secrets"
+         (the database connection string), so it is only stored once. -->
+    <UserSecretsId>e729a9e0-2350-419f-bf9d-dde4c90f2c73</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- The React source is built by Vite, not by .NET -->
+    <Content Remove="client\**" />
+    <Compile Remove="client\**" />
+    <None Remove="client\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Cleans HTML so only safe tags remain (used by MarkdownRenderer) -->
+    <PackageReference Include="HtmlSanitizer" Version="9.2.1039" />
+    <!-- Converts Markdown text to HTML -->
+    <PackageReference Include="Markdig" Version="1.4.0" />
+    <!-- Entity Framework Core and its MySQL/MariaDB provider -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.2" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.2" />
+    <PackageReference Include="Yarp.ReverseProxy" Version="2.3.0" />
+  </ItemGroup>
+
+</Project>

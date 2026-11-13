@@ -6,6 +6,11 @@ bin/
 obj/
 publish/
 
+# The React app: downloaded packages, and the built site that Vite writes
+# into site/wwwroot (recreated by "npm install" / "npm run build")
+node_modules/
+site/wwwroot/
+
 # Visual Studio / VS Code / Rider user files
 .vs/
 .vscode/
@@ -19,7 +24,7 @@ deploy/.env
 
 # The CV document contains private contact details (phone number) and is not
 # needed by the site (the CV content lives in the database)
-Data/*.pdf
+v1/Data/*.pdf
 
 # Local settings overrides, if you create any
 appsettings.*.local.json

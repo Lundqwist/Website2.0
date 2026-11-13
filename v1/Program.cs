@@ -150,6 +150,18 @@ using (var scope = app.Services.CreateScope())
 // Each "app.Use..." adds a step. A request passes through them in this
 // order, so the order matters (e.g. authentication before authorization).
 
+// This site now lives in a "subfolder" of lundqwist.se: the new site (../site)
+// passes every request that starts with /v1 on to this app. UsePathBase strips
+// that prefix before routing (so /v1/Stories still reaches StoriesController)
+// and adds it to every link the views generate (asp-controller, ~/css/...).
+// "PathBase" is set to /v1 in docker-compose.yml; when it is empty the site
+// runs at the root as before.
+var pathBase = builder.Configuration["PathBase"];
+if (!string.IsNullOrWhiteSpace(pathBase))
+{
+    app.UsePathBase(pathBase);
+}
+
 // First: read the reverse proxy's headers (see ForwardedHeadersOptions above),
 // so every later step sees the visitor's real IP address and HTTPS.
 app.UseForwardedHeaders();
