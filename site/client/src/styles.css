@@ -269,9 +269,13 @@ a:hover {
 
 /* ── A portfolio item's page, and About ─────────────────────────────────── */
 
-.item,
 .about {
   max-width: 44rem;
+}
+
+/* A little wider than About: the item texts have tables and code */
+.item {
+  max-width: 52rem;
 }
 
 .item-image {
@@ -328,6 +332,77 @@ a:hover {
 .prose strong {
   color: #eef1f8;
   font-weight: 500;
+}
+
+.prose h4 {
+  margin: 1.75rem 0 0.5rem;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: var(--gold-soft);
+}
+
+/* Code: a word inside a sentence, and whole blocks. A wide block scrolls
+   sideways inside its box instead of widening the page. */
+.prose code {
+  font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  font-size: 0.875em;
+  padding: 0.1em 0.35em;
+  background: #0f2550;
+  border-radius: 3px;
+  color: #e6ebf5;
+}
+
+.prose pre {
+  margin: 1.25rem 0;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  background: #0b1c3d;
+  border: 1px solid var(--navy-light);
+  border-radius: 4px;
+  line-height: 1.45;
+}
+
+.prose pre code {
+  padding: 0;
+  background: none;
+  font-size: 0.8125rem;
+}
+
+/* Tables scroll sideways on their own when they are too wide */
+.prose table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 1.25rem 0;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.prose th,
+.prose td {
+  padding: 0.5rem 0.85rem;
+  border: 1px solid var(--navy-light);
+  text-align: left;
+  vertical-align: top;
+}
+
+.prose th {
+  background: #0f2550;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.prose img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* The line between an item's short description and its long text */
+.item .prose {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--navy-light);
 }
 
 .cv-links,

@@ -26,6 +26,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <!-- The texts of the portfolio items' pages (Markdown), copied next to the site -->
+    <None Include="Content\**" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
     <!-- Cleans HTML so only safe tags remain (used by MarkdownRenderer) -->
     <PackageReference Include="HtmlSanitizer" Version="9.2.1039" />
     <!-- Converts Markdown text to HTML -->

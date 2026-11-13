@@ -107,10 +107,21 @@ app.MapGet("/api/portfolio", async (SiteDbContext db) =>
         .ToListAsync());
 
 // One item's own page
-app.MapGet("/api/portfolio/{slug}", async (string slug, SiteDbContext db, MarkdownRenderer markdown) =>
+app.MapGet("/api/portfolio/{slug}", async (string slug, SiteDbContext db, MarkdownRenderer markdown, IWebHostEnvironment env) =>
 {
     var item = await db.PortfolioItems.FirstOrDefaultAsync(p => p.Slug == slug);
     if (item is null) return Results.NotFound();
+
+    // The longer text: the Body column if it has been written, otherwise the
+    // Markdown file Content/portfolio/{slug}.md (which started as a copy of
+    // the project's README on GitHub). The slug comes from the database row
+    // found above, not straight from the address.
+    var body = item.Body;
+    if (string.IsNullOrWhiteSpace(body))
+    {
+        var file = Path.Combine(env.ContentRootPath, "Content", "portfolio", item.Slug + ".md");
+        if (File.Exists(file)) body = await File.ReadAllTextAsync(file);
+    }
 
     return Results.Ok(new
     {
@@ -118,7 +129,7 @@ app.MapGet("/api/portfolio/{slug}", async (string slug, SiteDbContext db, Markdo
         item.Title,
         item.Summary,
         item.ImageUrl,
-        BodyHtml = markdown.Render(item.Body),
+        BodyHtml = markdown.Render(body),
         item.GitHubUrl,
         item.LinkUrl,
         item.LinkLabel,
