@@ -39,11 +39,23 @@ public static class SeedData
             },
             new PortfolioItem
             {
+                Slug = "smart-asset-tracking",
+                Title = "Smart Asset Tracking",
+                Summary = "A menu-driven C# / .NET 10 console application for tracking company assets (laptops, phones, " +
+                          "office equipment) across offices in several countries and currencies, with logins and roles, " +
+                          "a dashboard, reports and exports. Built with Entity Framework Core and SQL Server Express.",
+                ImageUrl = "/images/portfolio/smart-asset-tracking.png",
+                LinkUrl = "https://github.com/Lundqwist/Smart-Asset-Tracking",
+                LinkLabel = "Source on GitHub",
+                SortOrder = 25,
+            },
+            new PortfolioItem
+            {
                 Slug = "package-tracking",
                 Title = "Package Tracking",
                 Summary = "A team project from the Lexicon full-stack course: a package tracking site in English " +
                           "and Swedish with a map, delivery estimate and progress tracker, in plain HTML, CSS and JavaScript.",
-                ImageUrl = "/images/portfolio/placeholder.svg",
+                ImageUrl = "/images/portfolio/package-tracking.jpg",
                 LinkUrl = "https://github.com/Lundqwist/PackageTrackingTeamBlue",
                 LinkLabel = "Source on GitHub",
                 SortOrder = 30,
