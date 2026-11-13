@@ -269,11 +269,8 @@ a:hover {
 
 /* ── A portfolio item's page, and About ─────────────────────────────────── */
 
-.about {
-  max-width: 44rem;
-}
-
-/* A little wider than About: the item texts have tables and code */
+/* About fills the page width, from the brand to the last menu link.
+   An item's page is narrower, to keep its lines readable */
 .item {
   max-width: 52rem;
 }
