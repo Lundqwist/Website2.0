@@ -27,7 +27,12 @@ public class PortfolioItem
     // The longer text on the item's own page, in Markdown. Empty for now.
     public string? Body { get; set; }
 
-    // Optional button on the item's page: where the thing itself can be seen
+    // Optional: the source code on GitHub. Shown as a button at the top of
+    // the item's page.
+    [MaxLength(300)]
+    public string? GitHubUrl { get; set; }
+
+    // Optional second button: where the thing itself can be seen (a live page)
     [MaxLength(300)]
     public string? LinkUrl { get; set; }
 

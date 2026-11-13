@@ -22,6 +22,7 @@ public static class SeedData
                           "Built with C#, ASP.NET Core 8 MVC, Entity Framework Core and MariaDB, " +
                           "and hosted at home on a Synology NAS.",
                 ImageUrl = "/images/portfolio/lundqwist-se-v1.jpg",
+                GitHubUrl = "https://github.com/Lundqwist/Website2.0/tree/main/v1",
                 LinkUrl = "/v1/",
                 LinkLabel = "Open the first version",
                 SortOrder = 10,
@@ -33,8 +34,7 @@ public static class SeedData
                 Summary = "A self-hosted dashboard for a side monitor that shows my home network at a glance: " +
                           "PC, Raspberry Pi, NAS, Pi-hole, websites, camera, printer, tasks and weather.",
                 ImageUrl = "/images/portfolio/network-dashboard.jpg",
-                LinkUrl = "https://github.com/Lundqwist/NetworkDashboard",
-                LinkLabel = "Source on GitHub",
+                GitHubUrl = "https://github.com/Lundqwist/NetworkDashboard",
                 SortOrder = 20,
             },
             new PortfolioItem
@@ -45,9 +45,19 @@ public static class SeedData
                           "office equipment) across offices in several countries and currencies, with logins and roles, " +
                           "a dashboard, reports and exports. Built with Entity Framework Core and SQL Server Express.",
                 ImageUrl = "/images/portfolio/smart-asset-tracking.png",
-                LinkUrl = "https://github.com/Lundqwist/Smart-Asset-Tracking",
-                LinkLabel = "Source on GitHub",
+                GitHubUrl = "https://github.com/Lundqwist/Smart-Asset-Tracking",
                 SortOrder = 25,
+            },
+            new PortfolioItem
+            {
+                Slug = "sql-first",
+                Title = "SQL First: School Manager",
+                Summary = "A C# / .NET 10 console application that manages a school's programs, courses and students " +
+                          "with hand-written SQL against SQL Server Express: joins, parameterised queries, search, " +
+                          "add and remove, and a setup script that creates the database with sample data.",
+                ImageUrl = "/images/portfolio/sql-first.png",
+                GitHubUrl = "https://github.com/Lundqwist/SQL_First",
+                SortOrder = 27,
             },
             new PortfolioItem
             {
@@ -56,8 +66,9 @@ public static class SeedData
                 Summary = "A team project from the Lexicon full-stack course: a package tracking site in English " +
                           "and Swedish with a map, delivery estimate and progress tracker, in plain HTML, CSS and JavaScript.",
                 ImageUrl = "/images/portfolio/package-tracking.jpg",
-                LinkUrl = "https://github.com/Lundqwist/PackageTrackingTeamBlue",
-                LinkLabel = "Source on GitHub",
+                GitHubUrl = "https://github.com/Lundqwist/PackageTrackingTeamBlue",
+                LinkUrl = "https://lundqwist.github.io/PackageTrackingTeamBlue/",
+                LinkLabel = "Open the page",
                 SortOrder = 30,
             },
             new PortfolioItem
@@ -67,8 +78,7 @@ public static class SeedData
                 Summary = "A World of Warcraft addon in Lua that tracks the XP of every quest in your log, " +
                           "shows how close it gets you to the next level and spots quest items you no longer need.",
                 ImageUrl = "/images/portfolio/quest-xp-tracker.png",
-                LinkUrl = "https://github.com/Lundqwist/WoW_Forever_QuestXPTracker",
-                LinkLabel = "Source on GitHub",
+                GitHubUrl = "https://github.com/Lundqwist/WoW_Forever_QuestXPTracker",
                 SortOrder = 40,
             });
 

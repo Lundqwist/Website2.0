@@ -22,6 +22,25 @@ export default function PortfolioItem() {
       {item && (
         <article className="item">
           <h1 className="page-title">{item.title}</h1>
+
+          {/* The links come first: the source on GitHub, then the thing itself
+              if it can be opened. Normal links, not React ones: they leave the
+              React app (to another website or to /v1/). */}
+          {(item.gitHubUrl || item.linkUrl) && (
+            <div className="item-links">
+              {item.gitHubUrl && (
+                <a className="button" href={item.gitHubUrl}>
+                  Source on GitHub
+                </a>
+              )}
+              {item.linkUrl && (
+                <a className="button" href={item.linkUrl}>
+                  {item.linkLabel || 'Take a look'}
+                </a>
+              )}
+            </div>
+          )}
+
           <div className="item-image">
             <img src={item.imageUrl} alt="" />
           </div>
@@ -29,16 +48,6 @@ export default function PortfolioItem() {
 
           {/* The longer text comes from the database as ready-made, cleaned HTML */}
           {item.bodyHtml && <div className="prose" dangerouslySetInnerHTML={{ __html: item.bodyHtml }} />}
-
-          {item.linkUrl && (
-            <p>
-              {/* A normal link, not a React one: it leaves the React app
-                  (to /v1/ or to another website) */}
-              <a className="button" href={item.linkUrl}>
-                {item.linkLabel || 'Take a look'}
-              </a>
-            </p>
-          )}
         </article>
       )}
     </>

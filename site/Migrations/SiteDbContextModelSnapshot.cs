@@ -58,6 +58,10 @@ namespace Lundqwist.Site.Migrations
                     b.Property<string>("Body")
                         .HasColumnType("longtext");
 
+                    b.Property<string>("GitHubUrl")
+                        .HasMaxLength(300)
+                        .HasColumnType("varchar(300)");
+
                     b.Property<string>("ImageUrl")
                         .IsRequired()
                         .HasMaxLength(300)

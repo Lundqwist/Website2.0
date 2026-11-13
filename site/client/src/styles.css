@@ -330,11 +330,20 @@ a:hover {
   font-weight: 500;
 }
 
-.cv-links {
+.cv-links,
+.item-links {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+}
+
+.cv-links {
   margin-top: 2.5rem;
+}
+
+/* The buttons under a portfolio item's title */
+.item-links {
+  margin: -0.5rem 0 1.75rem;
 }
 
 .button {

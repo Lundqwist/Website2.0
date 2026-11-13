@@ -119,6 +119,7 @@ app.MapGet("/api/portfolio/{slug}", async (string slug, SiteDbContext db, Markdo
         item.Summary,
         item.ImageUrl,
         BodyHtml = markdown.Render(item.Body),
+        item.GitHubUrl,
         item.LinkUrl,
         item.LinkLabel,
     });
