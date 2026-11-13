@@ -1,4 +1,4 @@
-﻿using Lundqwist.Site.Models;
+using Lundqwist.Site.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Lundqwist.Site.Data;
@@ -54,7 +54,7 @@ public static class SeedData
                 Title = "Quest XP Tracker",
                 Summary = "A World of Warcraft addon in Lua that tracks the XP of every quest in your log, " +
                           "shows how close it gets you to the next level and spots quest items you no longer need.",
-                ImageUrl = "/images/portfolio/placeholder.svg",
+                ImageUrl = "/images/portfolio/quest-xp-tracker.png",
                 LinkUrl = "https://github.com/Lundqwist/WoW_Forever_QuestXPTracker",
                 LinkLabel = "Source on GitHub",
                 SortOrder = 40,

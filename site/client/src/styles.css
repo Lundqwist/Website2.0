@@ -232,17 +232,19 @@ a:hover {
   color: inherit;
 }
 
-/* In the list every picture is cut to the same wide shape (its top part
-   shows); on the item's own page the whole picture is shown. */
+/* In the list every picture gets the same wide space and is shown whole
+   inside it: a tall or narrow picture sits in the middle with the frame's
+   colour beside it. */
 .portfolio-card-image img {
   width: 100%;
   aspect-ratio: 960 / 430;
-  object-fit: cover;
-  object-position: top;
+  object-fit: contain;
 }
 
+/* On the item's own page a big picture is scaled down to fit; a small one
+   keeps its own size (not blown up and blurry) and is centred. */
 .item-image img {
-  width: 100%;
+  margin: 0 auto;
 }
 
 .portfolio-card-text {
