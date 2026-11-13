@@ -213,6 +213,16 @@ a:hover {
   color: var(--gold-soft);
 }
 
+/* The artwork under the tiles. Its edges fade out, so its own navy
+   background blends into the page */
+.home-art {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 3rem;
+  mask-image: radial-gradient(ellipse closest-side, #000 72%, transparent 100%);
+}
+
 /* ── Portfolio list ─────────────────────────────────────────────────────── */
 
 .portfolio-list {
