@@ -29,6 +29,20 @@ public static class SeedData
             },
             new PortfolioItem
             {
+                Slug = "jawbreakers",
+                Title = "Jawbreakers guild site",
+                Summary = "The website of my World of Warcraft: Forever guild: members by class with Armory links, an event calendar, " +
+                          "a crafting page with every profession's recipes, materials and who in the guild can make them, " +
+                          "and an admin area for editing it all. Built with C#, ASP.NET Core 8 minimal API, Entity Framework Core " +
+                          "and SQLite, with a plain HTML, CSS and JavaScript front end, and hosted at home on a Synology NAS.",
+                ImageUrl = "/images/portfolio/jawbreakers.jpg",
+                GitHubUrl = "https://github.com/Lundqwist/Jawbreakers-Guild",
+                LinkUrl = "/jawbreakers/",
+                LinkLabel = "Open the guild site",
+                SortOrder = 15,
+            },
+            new PortfolioItem
+            {
                 Slug = "network-dashboard",
                 Title = "Network Dashboard",
                 Summary = "A self-hosted dashboard for a side monitor that shows my home network at a glance: " +
