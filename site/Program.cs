@@ -40,7 +40,12 @@ builder.Services.AddSingleton<MarkdownRenderer>();
 //   /v1/...        sent as it is; v1 knows it lives under /v1 (its PathBase)
 //   /media/...     images uploaded in v1's admin; texts link to them like this
 //   /showcase/...  v1's showcase folder; same reason
+//
+// The Jawbreakers guild site (github.com/Lundqwist/Jawbreakers-Guild), its own
+// container on the NAS:
+//   /jawbreakers/...  sent as it is; that site knows it lives under /jawbreakers
 var v1Address = builder.Configuration["V1:Address"] ?? "http://127.0.0.1:8091";
+var jawbreakersAddress = builder.Configuration["Jawbreakers:Address"] ?? "http://127.0.0.1:8095";
 builder.Services.AddReverseProxy().LoadFromMemory(
     routes:
     [
@@ -50,6 +55,8 @@ builder.Services.AddReverseProxy().LoadFromMemory(
             .WithTransformPathPrefix("/v1").WithTransformUseOriginalHostHeader(),
         new RouteConfig { RouteId = "v1-showcase", ClusterId = "v1", Match = new RouteMatch { Path = "/showcase/{**rest}" } }
             .WithTransformPathPrefix("/v1").WithTransformUseOriginalHostHeader(),
+        new RouteConfig { RouteId = "jawbreakers", ClusterId = "jawbreakers", Match = new RouteMatch { Path = "/jawbreakers/{**rest}" } }
+            .WithTransformUseOriginalHostHeader(),
     ],
     clusters:
     [
@@ -59,6 +66,14 @@ builder.Services.AddReverseProxy().LoadFromMemory(
             Destinations = new Dictionary<string, DestinationConfig>
             {
                 ["v1"] = new() { Address = v1Address },
+            },
+        },
+        new ClusterConfig
+        {
+            ClusterId = "jawbreakers",
+            Destinations = new Dictionary<string, DestinationConfig>
+            {
+                ["jawbreakers"] = new() { Address = jawbreakersAddress },
             },
         },
     ]);
