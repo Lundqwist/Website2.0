@@ -94,6 +94,17 @@ public static class SeedData
                 ImageUrl = "/images/portfolio/quest-xp-tracker.png",
                 GitHubUrl = "https://github.com/Lundqwist/WoW_Forever_QuestXPTracker",
                 SortOrder = 40,
+            },
+            new PortfolioItem
+            {
+                Slug = "favorite-items",
+                Title = "FavoriteItems",
+                Summary = "A World of Warcraft: Forever addon in Lua for marking specific items as favorites with a heart. " +
+                          "If a favorite is sold to a vendor, a warning pops up with a button to buy it back. " +
+                          "Works with the Baganator bag addon through its plugin API, and with the default bags.",
+                ImageUrl = "/images/portfolio/favorite-items.png",
+                GitHubUrl = "https://github.com/Lundqwist/FavoriteItems",
+                SortOrder = 45,
             });
 
         await db.SaveChangesAsync();
