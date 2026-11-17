@@ -133,13 +133,7 @@ a:hover {
   padding: 3.5rem 2rem 4rem;
 }
 
-/* The footer always stays in view at the bottom of the window, like the
-   header at the top: on a short page it sits at the bottom, on a long page
-   it sticks to the bottom edge while the page scrolls under it. */
 .site-footer {
-  position: sticky;
-  bottom: 0;
-  z-index: 10;
   min-height: 3.5rem;
   padding: 0.75rem 1rem;
   background: var(--navy);
