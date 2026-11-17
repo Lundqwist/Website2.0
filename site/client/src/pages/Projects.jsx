@@ -16,6 +16,20 @@ const projects = [
     pageUrl: '/projects/lunarmods',
     gitHubUrl: 'https://github.com/Lundqwist/LunarMods',
   },
+  {
+    title: 'My WoW characters',
+    status: 'Ongoing',
+    summary:
+      'The World of Warcraft characters I play, with what the Armory knows about them: gear, ' +
+      'stats and professions, read live from Blizzard\'s API. Retail and WoW: Forever are two ' +
+      'different worlds, so each has its own page. Each character will get its story here too.',
+    // Pages served by a separate app (not part of this React app), so plain links
+    links: [
+      { label: 'Retail characters', url: '/wowcharacters/retail/' },
+      { label: 'WoW: Forever characters', url: '/wowcharacters/forever/' },
+    ],
+    gitHubUrl: 'https://github.com/Lundqwist/WowCharacters',
+  },
 ]
 
 export default function Projects() {
@@ -33,13 +47,18 @@ export default function Projects() {
               <span className="project-status">{project.status}</span>
             </div>
             <p>{project.summary}</p>
-            {(project.pageUrl || project.gitHubUrl) && (
+            {(project.pageUrl || project.links || project.gitHubUrl) && (
               <div className="project-links">
                 {project.pageUrl && (
                   <Link className="button" to={project.pageUrl}>
                     Read more
                   </Link>
                 )}
+                {project.links?.map((link) => (
+                  <a key={link.url} className="button" href={link.url}>
+                    {link.label}
+                  </a>
+                ))}
                 {project.gitHubUrl && (
                   <a className="button" href={project.gitHubUrl}>
                     Source on GitHub

@@ -44,8 +44,12 @@ builder.Services.AddSingleton<MarkdownRenderer>();
 // The Jawbreakers guild site (github.com/Lundqwist/Jawbreakers-Guild), its own
 // container on the NAS:
 //   /jawbreakers/...  sent as it is; that site knows it lives under /jawbreakers
+//
+// My WoW characters (github.com/Lundqwist/WowCharacters), its own container too:
+//   /wowcharacters/...  sent as it is; that site knows it lives under /wowcharacters
 var v1Address = builder.Configuration["V1:Address"] ?? "http://127.0.0.1:8091";
 var jawbreakersAddress = builder.Configuration["Jawbreakers:Address"] ?? "http://127.0.0.1:8095";
+var wowCharactersAddress = builder.Configuration["WowCharacters:Address"] ?? "http://127.0.0.1:8096";
 builder.Services.AddReverseProxy().LoadFromMemory(
     routes:
     [
@@ -56,6 +60,9 @@ builder.Services.AddReverseProxy().LoadFromMemory(
         new RouteConfig { RouteId = "v1-showcase", ClusterId = "v1", Match = new RouteMatch { Path = "/showcase/{**rest}" } }
             .WithTransformPathPrefix("/v1").WithTransformUseOriginalHostHeader(),
         new RouteConfig { RouteId = "jawbreakers", ClusterId = "jawbreakers", Match = new RouteMatch { Path = "/jawbreakers/{**rest}" } }
+            .WithTransformUseOriginalHostHeader(),
+        // Both /wowcharacters and /wowcharacters/...: that site sends /wowcharacters on to /wowcharacters/
+        new RouteConfig { RouteId = "wowcharacters", ClusterId = "wowcharacters", Match = new RouteMatch { Path = "/wowcharacters/{**rest}" } }
             .WithTransformUseOriginalHostHeader(),
     ],
     clusters:
@@ -74,6 +81,14 @@ builder.Services.AddReverseProxy().LoadFromMemory(
             Destinations = new Dictionary<string, DestinationConfig>
             {
                 ["jawbreakers"] = new() { Address = jawbreakersAddress },
+            },
+        },
+        new ClusterConfig
+        {
+            ClusterId = "wowcharacters",
+            Destinations = new Dictionary<string, DestinationConfig>
+            {
+                ["wowcharacters"] = new() { Address = wowCharactersAddress },
             },
         },
     ]);
