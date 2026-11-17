@@ -23,11 +23,9 @@ const projects = [
       'The World of Warcraft characters I play, with what the Armory knows about them: gear, ' +
       'stats and professions, read live from Blizzard\'s API. Retail and WoW: Forever are two ' +
       'different worlds, so each has its own page. Each character will get its story here too.',
-    // Pages served by a separate app (not part of this React app), so plain links
-    links: [
-      { label: 'Retail characters', url: '/wowcharacters/retail/' },
-      { label: 'WoW: Forever characters', url: '/wowcharacters/forever/' },
-    ],
+    // Pages served by a separate app (not part of this React app), so a plain link.
+    // Its start page lets the visitor choose Retail or Forever.
+    links: [{ label: 'View characters', url: '/wowcharacters/' }],
     gitHubUrl: 'https://github.com/Lundqwist/WowCharacters',
   },
 ]
