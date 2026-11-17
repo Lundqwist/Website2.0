@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useTitle } from '../useApi.js'
+import { GitHubButton } from '../BrandButtons.jsx'
 
 // The Lunar Journal project page: /projects/lunar-journal. The WoW addon that keeps a journal,
 // and StoryMaker, the Windows program that turns the journal into a character's story.
@@ -73,6 +74,9 @@ export default function LunarJournal() {
               </li>
             </ul>
           </div>
+          <div className="project-links">
+            <GitHubButton href="https://github.com/Lundqwist/LunarJournal" />
+          </div>
         </section>
 
         <section id="storymaker" className="mod">
@@ -139,9 +143,7 @@ export default function LunarJournal() {
             <a className="button" href={storyMakerDownload}>
               Download StoryMaker {storyMakerVersion} for Windows
             </a>
-            <a className="button" href="https://github.com/Lundqwist/StoryMaker">
-              Source on GitHub
-            </a>
+            <GitHubButton href="https://github.com/Lundqwist/StoryMaker" />
           </div>
           <p className="mod-note">
             A normal Windows installer (68 MB, .NET included) for Windows 10 and 11. No admin rights
@@ -174,9 +176,9 @@ export default function LunarJournal() {
             <a className="button" href="/wowcharacters/forever/chapter.html?c=gilded-gobsong&n=1">
               Read the first chapter
             </a>
-            <a className="button" href="https://github.com/Lundqwist/LunarJournal">
-              Lunar Journal on GitHub
-            </a>
+            <GitHubButton href="https://github.com/Lundqwist/WowCharacters">
+              Website on GitHub
+            </GitHubButton>
           </div>
         </section>
       </article>

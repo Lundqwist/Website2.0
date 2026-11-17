@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useTitle } from '../useApi.js'
+import { GitHubButton } from '../BrandButtons.jsx'
 
 // The Projects page: things I am working on right now. Finished work goes
 // on the Portfolio page instead. Add a project by adding an entry here.
@@ -12,8 +13,13 @@ const projects = [
       'Lunar Journal writes down your adventures, Quest XP Tracker shows how far your quests take ' +
       'you and where they are done, and FavoriteItems guards the items you care about. The project ' +
       'grows as I add mods.',
-    // A page of its own on this site (a route in main.jsx). No single repository: each mod has its own.
+    // A page of its own on this site (a route in main.jsx). Each mod has its own repository.
     pageUrl: '/projects/lunarmods',
+    gitHubUrls: [
+      { label: 'Lunar Journal', url: 'https://github.com/Lundqwist/LunarJournal' },
+      { label: 'Quest XP Tracker', url: 'https://github.com/Lundqwist/WoW_Forever_QuestXPTracker' },
+      { label: 'FavoriteItems', url: 'https://github.com/Lundqwist/FavoriteItems' },
+    ],
   },
   {
     title: 'Lunar Journal & StoryMaker',
@@ -30,7 +36,10 @@ const projects = [
       { label: 'Read a chapter', url: '/wowcharacters/forever/chapter.html?c=gilded-gobsong&n=1' },
       { label: 'Download StoryMaker', url: 'https://github.com/Lundqwist/StoryMaker/releases/download/v1.0.0/StoryMaker-1.0.0-Setup.exe' },
     ],
-    gitHubUrl: 'https://github.com/Lundqwist/LunarJournal',
+    gitHubUrls: [
+      { label: 'Lunar Journal', url: 'https://github.com/Lundqwist/LunarJournal' },
+      { label: 'StoryMaker', url: 'https://github.com/Lundqwist/StoryMaker' },
+    ],
   },
   {
     title: 'My WoW characters',
@@ -43,7 +52,7 @@ const projects = [
     // Pages served by a separate app (not part of this React app), so a plain link.
     // Its start page lets the visitor choose Retail or Forever.
     links: [{ label: 'View characters', url: '/wowcharacters/' }],
-    gitHubUrl: 'https://github.com/Lundqwist/WowCharacters',
+    gitHubUrls: [{ label: 'View on GitHub', url: 'https://github.com/Lundqwist/WowCharacters' }],
   },
 ]
 
@@ -62,7 +71,7 @@ export default function Projects() {
               <span className="project-status">{project.status}</span>
             </div>
             <p>{project.summary}</p>
-            {(project.pageUrl || project.links || project.gitHubUrl) && (
+            {(project.pageUrl || project.links || project.gitHubUrls) && (
               <div className="project-links">
                 {project.pageUrl && (
                   <Link className="button" to={project.pageUrl}>
@@ -74,11 +83,11 @@ export default function Projects() {
                     {link.label}
                   </a>
                 ))}
-                {project.gitHubUrl && (
-                  <a className="button" href={project.gitHubUrl}>
-                    Source on GitHub
-                  </a>
-                )}
+                {project.gitHubUrls?.map((repo) => (
+                  <GitHubButton key={repo.url} href={repo.url}>
+                    {repo.label}
+                  </GitHubButton>
+                ))}
               </div>
             )}
           </li>

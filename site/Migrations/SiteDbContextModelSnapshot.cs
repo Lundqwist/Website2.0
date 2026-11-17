@@ -59,6 +59,10 @@ namespace Lundqwist.Site.Migrations
                     b.Property<string>("Body")
                         .HasColumnType("longtext");
 
+                    b.Property<string>("CurseForgeUrl")
+                        .HasMaxLength(300)
+                        .HasColumnType("varchar(300)");
+
                     b.Property<DateOnly>("Date")
                         .HasColumnType("date");
 

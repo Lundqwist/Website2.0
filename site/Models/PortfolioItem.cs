@@ -32,7 +32,12 @@ public class PortfolioItem
     [MaxLength(300)]
     public string? GitHubUrl { get; set; }
 
-    // Optional second button: where the thing itself can be seen (a live page)
+    // Optional: the download page on CurseForge (for WoW addons). Shown as a
+    // CurseForge button next to the GitHub one.
+    [MaxLength(300)]
+    public string? CurseForgeUrl { get; set; }
+
+    // Optional third button: where the thing itself can be seen (a live page)
     [MaxLength(300)]
     public string? LinkUrl { get; set; }
 

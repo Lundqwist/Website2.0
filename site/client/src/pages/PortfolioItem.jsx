@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom'
 import { useApi, useTitle } from '../useApi.js'
 import NotFound from './NotFound.jsx'
+import { CurseForgeButton, GitHubButton } from '../BrandButtons.jsx'
 
 // One portfolio item's own page: /portfolio/{slug}
 export default function PortfolioItem() {
@@ -23,16 +24,13 @@ export default function PortfolioItem() {
         <article className="item">
           <h1 className="page-title">{item.title}</h1>
 
-          {/* The links come first: the source on GitHub, then the thing itself
-              if it can be opened. Normal links, not React ones: they leave the
+          {/* The links come first: the source on GitHub, the download on
+              CurseForge, then the thing itself if it can be opened. Normal links, not React ones: they leave the
               React app (to another website or to /v1/). */}
-          {(item.gitHubUrl || item.linkUrl) && (
+          {(item.gitHubUrl || item.curseForgeUrl || item.linkUrl) && (
             <div className="item-links">
-              {item.gitHubUrl && (
-                <a className="button" href={item.gitHubUrl}>
-                  Source on GitHub
-                </a>
-              )}
+              {item.gitHubUrl && <GitHubButton href={item.gitHubUrl} />}
+              {item.curseForgeUrl && <CurseForgeButton href={item.curseForgeUrl} />}
               {item.linkUrl && (
                 <a className="button" href={item.linkUrl}>
                   {item.linkLabel || 'Take a look'}

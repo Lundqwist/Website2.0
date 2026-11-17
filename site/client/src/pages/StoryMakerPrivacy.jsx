@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useTitle } from '../useApi.js'
+import { GitHubButton } from '../BrandButtons.jsx'
 
 // StoryMaker's privacy policy: /storymaker/privacy. The Microsoft Store listing links here.
 export default function StoryMakerPrivacy() {
@@ -66,9 +67,12 @@ export default function StoryMakerPrivacy() {
 
           <h2>Questions</h2>
           <p>
-            Ask on <a href="https://github.com/Lundqwist/StoryMaker/issues">StoryMaker's GitHub page</a>.
-            StoryMaker is open source, so you can also read exactly what it does in its code.
+            Ask on StoryMaker's GitHub page. StoryMaker is open source, so you can also read exactly
+            what it does in its code.
           </p>
+          <div className="project-links">
+            <GitHubButton href="https://github.com/Lundqwist/StoryMaker/issues">Ask on GitHub</GitHubButton>
+          </div>
 
           <p className="mod-note">Last updated 17 November 2026.</p>
         </div>

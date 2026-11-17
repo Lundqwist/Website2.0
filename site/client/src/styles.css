@@ -589,6 +589,45 @@ a:hover {
   color: var(--navy-deep);
 }
 
+/* GitHub and CurseForge buttons, in those sites' own colours (BrandButtons.jsx) */
+.brand-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid transparent;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.brand-button svg {
+  width: 1.25em;
+  height: 1.25em;
+  flex: none;
+}
+
+.brand-github {
+  background: #24292f;
+  border-color: rgba(240, 246, 252, 0.15);
+  border-radius: 6px;
+}
+
+.brand-github:hover {
+  background: #32383f;
+  border-color: rgba(240, 246, 252, 0.35);
+}
+
+.brand-curseforge {
+  background: #f16436;
+  border-radius: 0;
+}
+
+.brand-curseforge:hover {
+  background: #eb622b;
+}
+
 /* ── Small screens ──────────────────────────────────────────────────────── */
 
 @media (max-width: 720px) {

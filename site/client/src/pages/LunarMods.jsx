@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useTitle } from '../useApi.js'
+import { CurseForgeButton, GitHubButton } from '../BrandButtons.jsx'
 
 // The LunarMods project page: /projects/lunarmods. LunarMods is the name for my
 // WoW addons; one section per mod. Add a mod by adding an entry to "mods" (and its
@@ -148,14 +149,8 @@ export default function LunarMods() {
             ))}
 
             <div className="project-links">
-              {mod.curseForgeUrl && (
-                <a className="button" href={mod.curseForgeUrl}>
-                  Download on CurseForge
-                </a>
-              )}
-              <a className="button" href={mod.gitHubUrl}>
-                Source on GitHub
-              </a>
+              <GitHubButton href={mod.gitHubUrl} />
+              {mod.curseForgeUrl && <CurseForgeButton href={mod.curseForgeUrl} />}
               {mod.portfolioSlug && (
                 <Link className="button" to={`/portfolio/${mod.portfolioSlug}`}>
                   In the portfolio

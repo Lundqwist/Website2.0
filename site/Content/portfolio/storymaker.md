@@ -20,4 +20,4 @@ The front page shows a card for every character with a journal. Pick one, tick t
 
 ## Download
 
-[StoryMaker 1.0.0 for Windows](https://github.com/Lundqwist/StoryMaker/releases/download/v1.0.0/StoryMaker-1.0.0-Setup.exe): a normal installer (68 MB, .NET included) for Windows 10 and 11, no admin rights needed. MIT license, source on [GitHub](https://github.com/Lundqwist/StoryMaker).
+[StoryMaker 1.0.0 for Windows](https://github.com/Lundqwist/StoryMaker/releases/download/v1.0.0/StoryMaker-1.0.0-Setup.exe): a normal installer (68 MB, .NET included) for Windows 10 and 11, no admin rights needed. MIT license; the source is behind the GitHub button at the top of this page.
