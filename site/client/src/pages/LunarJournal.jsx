@@ -40,7 +40,7 @@ export default function LunarJournal() {
           <div className="project-head">
             <h2 className="project-title">Lunar Journal, the addon</h2>
             <span className="mod-meta">
-              Lua · <code>/lj</code>
+              v0.1.1 · Lua · <code>/lj</code>
             </span>
           </div>
           <p className="mod-tagline">Writes down what happens while I play, so it can be told later.</p>
@@ -76,7 +76,7 @@ export default function LunarJournal() {
             <h2 className="project-title">StoryMaker</h2>
             <span className="mod-meta">C# · .NET 8 · WinForms</span>
           </div>
-          <p className="mod-tagline">Pick a character, pick an AI, read the chapter, post it.</p>
+          <p className="mod-tagline">Pick a character, pick an AI, shape the chapter, post it.</p>
           <div className="prose">
             <p>
               StoryMaker reads the journals the game saves, lists the play sessions that aren't in
@@ -85,6 +85,14 @@ export default function LunarJournal() {
               told what it may add (feelings, weather, the smell of a place) and what it may not
               (quests, people or deaths that never happened). I read every chapter and can edit it
               before it's posted.
+            </p>
+            <p>
+              The chapter is Markdown, with a bar for bold, italics, titles, quotes, scene dividers
+              and links, and a preview that looks like this site. <b>Picture</b> opens the game's
+              screenshots folder as thumbnails, newest first; <b>Sound</b> adds a sound with a
+              caption. When the chapter is posted, the pictures (made smaller first) and sounds are
+              uploaded with it; <b>Save as Markdown</b> keeps it on the PC instead, with its pictures
+              in a folder next to it, and without a website the saved chapters are the story so far.
             </p>
             <ul>
               <li>
@@ -96,12 +104,12 @@ export default function LunarJournal() {
                 Reads WoW's saved-variables files (Lua tables) with a small parser of its own
               </li>
               <li>
-                Keys are never stored: they are read from Windows environment variables, and a key
-                that clearly belongs elsewhere is refused before anything is sent
+                Talks to Ollama through its own API, so the model's context is sized to each chapter;
+                its OpenAI-compatible address would quietly cut a long journal short
               </li>
               <li>
-                Markdown editing with a formatting bar and a preview; pictures picked from the game's
-                screenshots and sounds, uploaded with the chapter
+                Keys are never stored: they are read from Windows environment variables, and a key
+                that clearly belongs elsewhere is refused before anything is sent
               </li>
               <li>
                 Dressed in this site's navy and gold, with the Lundqwist emblem on its front page; its
@@ -134,8 +142,10 @@ export default function LunarJournal() {
               Posting goes through a small token-protected API on{' '}
               <a href="/wowcharacters/">my WoW characters pages</a>: each post becomes the next
               chapter of the character's story, the character's page lists the chapters, and every
-              chapter has its own page with links to the one before and after. A chapter that is
-              replaced is kept, so nothing posted can be lost.
+              chapter has its own page with links to the one before and after. Pictures get their
+              caption under them, sounds a player, and scene dividers a row of gold stars. Uploaded
+              files are stored under safe, unique names, and a chapter that is replaced is kept, so
+              nothing posted can be lost.
             </p>
           </div>
           <div className="item-image">

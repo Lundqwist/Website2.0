@@ -8,17 +8,19 @@ namespace Lundqwist.Site.Data;
 // example with phpMyAdmin on the NAS).
 public static class SeedData
 {
-    // Shared with the migration that added these two to the live database
+    // Shared with the migrations that added these two to the live database and later updated them.
+    // Their longer texts are in Content/portfolio/lunar-journal.md and storymaker.md.
     public const string LunarJournalSummary =
         "A World of Warcraft: Forever addon in Lua that keeps a journal while you play: quests and who gave them, " +
-        "the people you meet, time spent running, riding, fishing and crafting, deaths, and the in-game time of day. " +
-        "The modern client hides the combat log from addons, so kills are counted from the units the game shows.";
+        "the people you meet, time spent running, riding, fishing and crafting, deaths, your own notes, and the " +
+        "in-game time of day. StoryMaker turns the journal into the character's story.";
 
     public const string StoryMakerSummary =
-        "A Windows program in C# (.NET 8, WinForms) that reads the Lunar Journal saves, hands them to an AI of your " +
-        "choosing (a free local model through Ollama, or Claude through Anthropic's C# SDK, OpenAI or Gemini) and " +
-        "gets back a chapter of the character's life, told as his own memories. Edit it, then post it as a new " +
-        "chapter through a token-protected API on the WoW characters pages.";
+        "A Windows program in C# (.NET 8, WinForms) that turns the Lunar Journal into a character's story. It hands " +
+        "the journal to an AI of your choosing (free and offline through Ollama, or Claude through Anthropic's C# " +
+        "SDK, OpenAI or Gemini), which writes a chapter as the character's own memories, years later. Edit it as " +
+        "Markdown with a live preview, add screenshots from the game and sounds, then post it as the next chapter " +
+        "on the WoW characters pages, or save it on your PC.";
 
     public static async Task EnsureSeededAsync(SiteDbContext db)
     {

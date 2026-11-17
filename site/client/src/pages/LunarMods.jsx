@@ -86,6 +86,30 @@ const mods = [
       { src: img('quest-xp-tracker-window.png'), alt: 'The Quest XP Tracker window with the XP bar and quests grouped by zone' },
     ],
   },
+  {
+    id: 'lunarjournal',
+    title: 'Lunar Journal',
+    version: '0.1.1',
+    tagline: 'A journal of your adventures, so they can be told later.',
+    gitHubUrl: 'https://github.com/Lundqwist/LunarJournal',
+    portfolioSlug: 'lunar-journal',
+    // its own project page, with StoryMaker, the program that turns the journal into stories
+    pageUrl: '/projects/lunar-journal',
+    command: '/lj',
+    paragraphs: [
+      'Lunar Journal quietly writes down every play session: the quests you take and who gave them, ' +
+        'the people you meet, how long you run, ride, fish and craft, where you die and what killed ' +
+        'you, all with the in-game time of day. /lj note adds a line of your own.',
+      'The journal is the raw material for StoryMaker, a Windows program that lets an AI turn it into ' +
+        'the character\'s own memories, chapter by chapter, for the story pages on this site.',
+    ],
+    points: [
+      'Never records chat; other players only appear by name when you group, trade or duel',
+      'Kills are counted from the target, focus, mouseover and nameplates, since the modern client keeps the combat log from addons',
+      'Its own minimap button and options page, or a place in the LM button once linked',
+    ],
+    images: [],
+  },
 ]
 
 export default function LunarMods() {
@@ -154,6 +178,11 @@ export default function LunarMods() {
               {mod.portfolioSlug && (
                 <Link className="button" to={`/portfolio/${mod.portfolioSlug}`}>
                   In the portfolio
+                </Link>
+              )}
+              {mod.pageUrl && (
+                <Link className="button" to={mod.pageUrl}>
+                  About the project
                 </Link>
               )}
             </div>
