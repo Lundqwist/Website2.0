@@ -4,6 +4,8 @@
 
 A World of Warcraft addon for **WoW Forever** (interface 16001), written in Lua.
 
+**[Download it on CurseForge](https://www.curseforge.com/wow/addons/favoriteitems)**
+
 ## Features
 
 - A **Favorites** button on the lower side of the bag and bank windows. Press it, then click items to mark or unmark them; a heart appears in the icon's upper left corner.

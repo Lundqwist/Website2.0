@@ -7,6 +7,8 @@
 
 A World of Warcraft addon for **WoW Forever** (interface 16001).
 
+**[Download it on CurseForge](https://www.curseforge.com/wow/addons/qxp-tracker)**
+
 ## Features
 
 - **Quest log count** in the title bar: quests in your log out of the maximum 40 (yellow from 35, red when full).

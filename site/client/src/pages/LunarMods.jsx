@@ -3,7 +3,8 @@ import { useTitle } from '../useApi.js'
 
 // The LunarMods project page: /projects/lunarmods. LunarMods is the name for my
 // WoW addons; one section per mod. Add a mod by adding an entry to "mods" (and its
-// screenshots to public/images/projects/lunarmods).
+// screenshots to public/images/projects/lunarmods). curseForgeUrl is optional: the mod's
+// CurseForge page, once it is published there.
 const img = (file) => `/images/projects/lunarmods/${file}`
 
 const mods = [
@@ -37,6 +38,7 @@ const mods = [
     version: '1.6.1',
     tagline: 'How far do my quests take me, and where are they actually done?',
     gitHubUrl: 'https://github.com/Lundqwist/WoW_Forever_QuestXPTracker',
+    curseForgeUrl: 'https://www.curseforge.com/wow/addons/qxp-tracker',
     portfolioSlug: 'quest-xp-tracker',
     command: '/qxp',
     paragraphs: [
@@ -65,6 +67,7 @@ const mods = [
     version: '1.2.1',
     tagline: 'Mark items with a heart, and get them back if you sell one by mistake.',
     gitHubUrl: 'https://github.com/Lundqwist/FavoriteItems',
+    curseForgeUrl: 'https://www.curseforge.com/wow/addons/favoriteitems',
     portfolioSlug: 'favorite-items',
     command: '/fav',
     paragraphs: [
@@ -145,6 +148,11 @@ export default function LunarMods() {
             ))}
 
             <div className="project-links">
+              {mod.curseForgeUrl && (
+                <a className="button" href={mod.curseForgeUrl}>
+                  Download on CurseForge
+                </a>
+              )}
               <a className="button" href={mod.gitHubUrl}>
                 Source on GitHub
               </a>
