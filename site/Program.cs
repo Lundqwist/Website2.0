@@ -132,7 +132,7 @@ app.UseStaticFiles(new StaticFileOptions
 // The list on the Portfolio page
 app.MapGet("/api/portfolio", async (SiteDbContext db) =>
     await db.PortfolioItems
-        .OrderBy(p => p.SortOrder).ThenBy(p => p.Title)
+        .OrderByDescending(p => p.Date).ThenByDescending(p => p.SortOrder).ThenBy(p => p.Title)
         .Select(p => new { p.Slug, p.Title, p.Summary, p.ImageUrl })
         .ToListAsync());
 

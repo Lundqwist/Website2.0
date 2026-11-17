@@ -39,6 +39,10 @@ public class PortfolioItem
     [MaxLength(100)]
     public string? LinkLabel { get; set; }
 
-    // Lower numbers come first in the list
+    // When the project started (the day its GitHub repository was created).
+    // The list shows the newest first.
+    public DateOnly Date { get; set; }
+
+    // Breaks ties between items with the same Date: higher numbers come first
     public int SortOrder { get; set; }
 }

@@ -39,6 +39,7 @@ public static class SeedData
                 GitHubUrl = "https://github.com/Lundqwist/Website2.0/tree/main/v1",
                 LinkUrl = "/v1/",
                 LinkLabel = "Open the first version",
+                Date = new DateOnly(2026, 10, 12),
                 SortOrder = 10,
             },
             new PortfolioItem
@@ -53,6 +54,7 @@ public static class SeedData
                 GitHubUrl = "https://github.com/Lundqwist/Jawbreakers-Guild",
                 LinkUrl = "/jawbreakers/",
                 LinkLabel = "Open the guild site",
+                Date = new DateOnly(2026, 11, 14),
                 SortOrder = 15,
             },
             new PortfolioItem
@@ -63,6 +65,7 @@ public static class SeedData
                           "PC, Raspberry Pi, NAS, Pi-hole, websites, camera, printer, tasks and weather.",
                 ImageUrl = "/images/portfolio/network-dashboard.jpg",
                 GitHubUrl = "https://github.com/Lundqwist/NetworkDashboard",
+                Date = new DateOnly(2026, 11, 11),
                 SortOrder = 20,
             },
             new PortfolioItem
@@ -74,6 +77,7 @@ public static class SeedData
                           "a dashboard, reports and exports. Built with Entity Framework Core and SQL Server Express.",
                 ImageUrl = "/images/portfolio/smart-asset-tracking.png",
                 GitHubUrl = "https://github.com/Lundqwist/Smart-Asset-Tracking",
+                Date = new DateOnly(2026, 11, 11),
                 SortOrder = 25,
             },
             new PortfolioItem
@@ -85,6 +89,7 @@ public static class SeedData
                           "add and remove, and a setup script that creates the database with sample data.",
                 ImageUrl = "/images/portfolio/sql-first.png",
                 GitHubUrl = "https://github.com/Lundqwist/SQL_First",
+                Date = new DateOnly(2026, 11, 6),
                 SortOrder = 27,
             },
             new PortfolioItem
@@ -97,6 +102,7 @@ public static class SeedData
                 GitHubUrl = "https://github.com/Lundqwist/PackageTrackingTeamBlue",
                 LinkUrl = "https://lundqwist.github.io/PackageTrackingTeamBlue/",
                 LinkLabel = "Open the page",
+                Date = new DateOnly(2026, 9, 30),
                 SortOrder = 30,
             },
             new PortfolioItem
@@ -107,6 +113,7 @@ public static class SeedData
                           "shows how close it gets you to the next level and spots quest items you no longer need.",
                 ImageUrl = "/images/portfolio/quest-xp-tracker.png",
                 GitHubUrl = "https://github.com/Lundqwist/WoW_Forever_QuestXPTracker",
+                Date = new DateOnly(2026, 11, 11),
                 SortOrder = 40,
             },
             new PortfolioItem
@@ -118,6 +125,7 @@ public static class SeedData
                           "Works with the Baganator bag addon through its plugin API, and with the default bags.",
                 ImageUrl = "/images/portfolio/favorite-items.png",
                 GitHubUrl = "https://github.com/Lundqwist/FavoriteItems",
+                Date = new DateOnly(2026, 11, 14),
                 SortOrder = 45,
             },
             new PortfolioItem
@@ -129,6 +137,7 @@ public static class SeedData
                 GitHubUrl = "https://github.com/Lundqwist/LunarJournal",
                 LinkUrl = "/projects/lunar-journal",
                 LinkLabel = "About the project",
+                Date = new DateOnly(2026, 11, 17),
                 SortOrder = 50,
             },
             new PortfolioItem
@@ -140,6 +149,7 @@ public static class SeedData
                 GitHubUrl = "https://github.com/Lundqwist/StoryMaker",
                 LinkUrl = "/wowcharacters/forever/chapter.html?c=gilded-gobsong&n=1",
                 LinkLabel = "Read a chapter",
+                Date = new DateOnly(2026, 11, 17),
                 SortOrder = 55,
             });
 
