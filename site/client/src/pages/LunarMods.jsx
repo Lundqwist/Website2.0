@@ -34,7 +34,7 @@ const mods = [
   {
     id: 'questxptracker',
     title: 'Quest XP Tracker',
-    version: '1.6.0',
+    version: '1.6.1',
     tagline: 'How far do my quests take me, and where are they actually done?',
     gitHubUrl: 'https://github.com/Lundqwist/WoW_Forever_QuestXPTracker',
     portfolioSlug: 'quest-xp-tracker',
@@ -62,7 +62,7 @@ const mods = [
   {
     id: 'favoriteitems',
     title: 'FavoriteItems',
-    version: '1.2.0',
+    version: '1.2.1',
     tagline: 'Mark items with a heart, and get them back if you sell one by mistake.',
     gitHubUrl: 'https://github.com/Lundqwist/FavoriteItems',
     portfolioSlug: 'favorite-items',
