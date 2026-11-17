@@ -99,13 +99,27 @@ export default function LunarJournal() {
                 Keys are never stored: they are read from Windows environment variables, and a key
                 that clearly belongs elsewhere is refused before anything is sent
               </li>
-              <li>Its icon, an old leather-bound book with a crescent moon, is drawn by a script</li>
+              <li>
+                Markdown editing with a formatting bar and a preview; pictures picked from the game's
+                screenshots and sounds, uploaded with the chapter
+              </li>
+              <li>
+                Dressed in this site's navy and gold, with the Lundqwist emblem on its front page; its
+                icon, an old leather-bound book with a crescent moon, is drawn by a script
+              </li>
             </ul>
           </div>
           <div className="item-image">
             <img
               src={img('storymaker.png')}
-              alt="StoryMaker with a play session from the journal and the chapter written from it"
+              alt="StoryMaker's front page: the Lundqwist emblem and a card for each character with a journal"
+              loading="lazy"
+            />
+          </div>
+          <div className="item-image">
+            <img
+              src={img('storymaker-preview.png')}
+              alt="A chapter in StoryMaker's preview, with a screenshot from the game"
               loading="lazy"
             />
           </div>
