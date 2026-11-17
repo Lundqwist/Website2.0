@@ -68,8 +68,8 @@ export default function LunarJournal() {
                 from what the game shows: the target, focus, mouseover and nameplates
               </li>
               <li>
-                Part of the <Link to="/projects/lunarmods">LunarMods</Link> family: its own minimap
-                button and options page, and it can be linked to the LM button
+                One of my <Link to="/projects/lunarmods">LunarMods</Link>, with its own minimap
+                button and options page
               </li>
             </ul>
           </div>

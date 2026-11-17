@@ -15,7 +15,7 @@ Chat is never recorded, and nothing leaves the game: the journal is a saved-vari
 
 ## How it's built
 
-One Lua file listens to the game's events and writes a session per login, picked up again after a `/reload`. Fishing and gathering loot is tied to the cast that caused it, and long runs of the same craft or catch become one entry, so the journal stays readable. It shares `LunarLink.lua` with the other [LunarMods](/projects/lunarmods): its own minimap button and options page, or a place in the LM button.
+One Lua file listens to the game's events and writes a session per login, picked up again after a `/reload`. Fishing and gathering loot is tied to the cast that caused it, and long runs of the same craft or catch become one entry, so the journal stays readable. Like my other [LunarMods](/projects/lunarmods), it has its own minimap button and options page.
 
 ## A problem solved
 

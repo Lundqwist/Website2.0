@@ -8,14 +8,12 @@ const projects = [
     title: 'LunarMods',
     status: 'Ongoing',
     summary:
-      'My own World of Warcraft: Forever addons, written in Lua. Each mod is a small addon of its ' +
-      'own that works alone: FavoriteItems guards the items you care about, Quest XP Tracker shows ' +
-      'how far your quests take you, Lunar Journal writes down your adventures. LunarMods ties them ' +
-      'together with one list to switch them on and off and one minimap button to run them from. ' +
-      'The project grows as I add mods.',
-    // A page of its own on this site (a route in main.jsx)
+      'My own World of Warcraft: Forever addons, written in Lua, each a small addon of its own: ' +
+      'Lunar Journal writes down your adventures, Quest XP Tracker shows how far your quests take ' +
+      'you and where they are done, and FavoriteItems guards the items you care about. The project ' +
+      'grows as I add mods.',
+    // A page of its own on this site (a route in main.jsx). No single repository: each mod has its own.
     pageUrl: '/projects/lunarmods',
-    gitHubUrl: 'https://github.com/Lundqwist/LunarMods',
   },
   {
     title: 'Lunar Journal & StoryMaker',
