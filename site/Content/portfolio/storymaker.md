@@ -1,4 +1,4 @@
-<!-- The text on this item's portfolio page. Based on the project's README (github.com/Lundqwist/LunarJournal); edit it freely. -->
+<!-- The text on this item's portfolio page. Based on the project's README (github.com/Lundqwist/StoryMaker); edit it freely. -->
 
 ## How it's used
 
@@ -17,3 +17,7 @@ The front page shows a card for every character with a journal. Pick one, tick t
 - **Copied sentences**: a small local model copied example sentences from the instructions word for word. The instructions now describe the tone instead of quoting it, and say what counts as a finished quest.
 - **Broken paths**: in Markdown `\_` means `_`, which quietly broke Windows paths like `\_forever_\`. Pictures are written with forward slashes.
 - **Keys in the wrong place**: when an API key variable held the website's token, it was sent to the AI and refused. StoryMaker now checks a key before anything leaves the PC.
+
+## Download
+
+[StoryMaker 1.0.0 for Windows](https://github.com/Lundqwist/StoryMaker/releases/download/v1.0.0/StoryMaker-1.0.0-Setup.exe): a normal installer (68 MB, .NET included) for Windows 10 and 11, no admin rights needed. MIT license, source on [GitHub](https://github.com/Lundqwist/StoryMaker).

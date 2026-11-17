@@ -537,6 +537,13 @@ a:hover {
   font-style: italic;
 }
 
+/* a small line under a section's buttons, e.g. what the download is */
+.mod-note {
+  margin: 0.75rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
 .project-head {
   display: flex;
   align-items: baseline;

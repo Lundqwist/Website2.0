@@ -137,7 +137,7 @@ public static class SeedData
                 Title = "StoryMaker",
                 Summary = StoryMakerSummary,
                 ImageUrl = "/images/portfolio/storymaker.png",
-                GitHubUrl = "https://github.com/Lundqwist/LunarJournal",
+                GitHubUrl = "https://github.com/Lundqwist/StoryMaker",
                 LinkUrl = "/wowcharacters/forever/chapter.html?c=gilded-gobsong&n=1",
                 LinkLabel = "Read a chapter",
                 SortOrder = 55,

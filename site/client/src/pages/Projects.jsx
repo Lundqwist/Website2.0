@@ -28,7 +28,10 @@ const projects = [
       'chapter of the character\'s life as his own memories, years later. I edit it as Markdown, add ' +
       'screenshots from the game and sounds, and post it as the next chapter of his story here.',
     pageUrl: '/projects/lunar-journal',
-    links: [{ label: 'Read a chapter', url: '/wowcharacters/forever/chapter.html?c=gilded-gobsong&n=1' }],
+    links: [
+      { label: 'Read a chapter', url: '/wowcharacters/forever/chapter.html?c=gilded-gobsong&n=1' },
+      { label: 'Download StoryMaker', url: 'https://github.com/Lundqwist/StoryMaker/releases/download/v1.0.0/StoryMaker-1.0.0-Setup.exe' },
+    ],
     gitHubUrl: 'https://github.com/Lundqwist/LunarJournal',
   },
   {

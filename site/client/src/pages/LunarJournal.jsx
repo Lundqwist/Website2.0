@@ -6,6 +6,10 @@ import { useTitle } from '../useApi.js'
 // Screenshots are in public/images/projects/lunar-journal.
 const img = (file) => `/images/projects/lunar-journal/${file}`
 
+// The StoryMaker installer on GitHub. Change both when a new version is released.
+const storyMakerVersion = '1.0.0'
+const storyMakerDownload = `https://github.com/Lundqwist/StoryMaker/releases/download/v${storyMakerVersion}/StoryMaker-${storyMakerVersion}-Setup.exe`
+
 export default function LunarJournal() {
   useTitle('Lunar Journal & StoryMaker')
 
@@ -74,7 +78,7 @@ export default function LunarJournal() {
         <section id="storymaker" className="mod">
           <div className="project-head">
             <h2 className="project-title">StoryMaker</h2>
-            <span className="mod-meta">C# · .NET 8 · WinForms</span>
+            <span className="mod-meta">v{storyMakerVersion} · C# · .NET 8 · WinForms</span>
           </div>
           <p className="mod-tagline">Pick a character, pick an AI, shape the chapter, post it.</p>
           <div className="prose">
@@ -131,6 +135,20 @@ export default function LunarJournal() {
               loading="lazy"
             />
           </div>
+          <div className="project-links">
+            <a className="button" href={storyMakerDownload}>
+              Download StoryMaker {storyMakerVersion} for Windows
+            </a>
+            <a className="button" href="https://github.com/Lundqwist/StoryMaker">
+              Source on GitHub
+            </a>
+          </div>
+          <p className="mod-note">
+            A normal Windows installer (68 MB, .NET included) for Windows 10 and 11. No admin rights
+            needed; uninstall it from Settings → Apps. It isn't signed, so Windows may warn about it:
+            choose <i>More info → Run anyway</i>.{' '}
+            <a href="https://github.com/Lundqwist/StoryMaker/releases">All versions</a>
+          </p>
         </section>
 
         <section id="website" className="mod">
@@ -156,7 +174,7 @@ export default function LunarJournal() {
               Read the first chapter
             </a>
             <a className="button" href="https://github.com/Lundqwist/LunarJournal">
-              Source on GitHub
+              Lunar Journal on GitHub
             </a>
           </div>
         </section>
