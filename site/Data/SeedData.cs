@@ -8,6 +8,18 @@ namespace Lundqwist.Site.Data;
 // example with phpMyAdmin on the NAS).
 public static class SeedData
 {
+    // Shared with the migration that added these two to the live database
+    public const string LunarJournalSummary =
+        "A World of Warcraft: Forever addon in Lua that keeps a journal while you play: quests and who gave them, " +
+        "the people you meet, time spent running, riding, fishing and crafting, deaths, and the in-game time of day. " +
+        "The modern client hides the combat log from addons, so kills are counted from the units the game shows.";
+
+    public const string StoryMakerSummary =
+        "A Windows program in C# (.NET 8, WinForms) that reads the Lunar Journal saves, hands them to an AI of your " +
+        "choosing (a free local model through Ollama, or Claude through Anthropic's C# SDK, OpenAI or Gemini) and " +
+        "gets back a chapter of the character's life, told as his own memories. Edit it, then post it as a new " +
+        "chapter through a token-protected API on the WoW characters pages.";
+
     public static async Task EnsureSeededAsync(SiteDbContext db)
     {
         if (await db.PortfolioItems.AnyAsync()) return;
@@ -105,6 +117,28 @@ public static class SeedData
                 ImageUrl = "/images/portfolio/favorite-items.png",
                 GitHubUrl = "https://github.com/Lundqwist/FavoriteItems",
                 SortOrder = 45,
+            },
+            new PortfolioItem
+            {
+                Slug = "lunar-journal",
+                Title = "Lunar Journal",
+                Summary = LunarJournalSummary,
+                ImageUrl = "/images/portfolio/lunar-journal.jpg",
+                GitHubUrl = "https://github.com/Lundqwist/LunarJournal",
+                LinkUrl = "/projects/lunar-journal",
+                LinkLabel = "About the project",
+                SortOrder = 50,
+            },
+            new PortfolioItem
+            {
+                Slug = "storymaker",
+                Title = "StoryMaker",
+                Summary = StoryMakerSummary,
+                ImageUrl = "/images/portfolio/storymaker.png",
+                GitHubUrl = "https://github.com/Lundqwist/LunarJournal",
+                LinkUrl = "/wowcharacters/forever/chapter.html?c=gilded-gobsong&n=1",
+                LinkLabel = "Read a chapter",
+                SortOrder = 55,
             });
 
         await db.SaveChangesAsync();
