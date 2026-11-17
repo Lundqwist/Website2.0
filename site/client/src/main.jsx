@@ -17,6 +17,7 @@ import PortfolioItem from './pages/PortfolioItem.jsx'
 import Projects from './pages/Projects.jsx'
 import LunarMods from './pages/LunarMods.jsx'
 import LunarJournal from './pages/LunarJournal.jsx'
+import StoryMakerPrivacy from './pages/StoryMakerPrivacy.jsx'
 import About from './pages/About.jsx'
 import NotFound from './pages/NotFound.jsx'
 
@@ -31,6 +32,7 @@ const router = createBrowserRouter([
       { path: '/projects', element: <Projects /> },
       { path: '/projects/lunarmods', element: <LunarMods /> },
       { path: '/projects/lunar-journal', element: <LunarJournal /> },
+      { path: '/storymaker/privacy', element: <StoryMakerPrivacy /> },
       { path: '/about', element: <About /> },
       { path: '*', element: <NotFound /> },
     ],

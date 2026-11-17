@@ -147,7 +147,8 @@ export default function LunarJournal() {
             A normal Windows installer (68 MB, .NET included) for Windows 10 and 11. No admin rights
             needed; uninstall it from Settings → Apps. It isn't signed, so Windows may warn about it:
             choose <i>More info → Run anyway</i>.{' '}
-            <a href="https://github.com/Lundqwist/StoryMaker/releases">All versions</a>
+            <a href="https://github.com/Lundqwist/StoryMaker/releases">All versions</a> ·{' '}
+            <Link to="/storymaker/privacy">Privacy policy</Link>
           </p>
         </section>
 
