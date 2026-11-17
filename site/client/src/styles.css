@@ -19,6 +19,10 @@
 
 html {
   color-scheme: dark;
+  /* Always keep room for the scrollbar, so short pages (no scrollbar) and
+     long pages (scrollbar) put the header, menu and content in exactly the
+     same place, and nothing jumps sideways when moving between them */
+  scrollbar-gutter: stable;
 }
 
 body {
