@@ -17,6 +17,19 @@ const projects = [
     gitHubUrl: 'https://github.com/Lundqwist/LunarMods',
   },
   {
+    title: 'Lunar Journal & StoryMaker',
+    status: 'Ongoing',
+    summary:
+      'A WoW: Forever addon that keeps a journal while I play: the quests and who gave them, the ' +
+      'people I met, the hours spent running, fishing and crafting, and the in-game time of day. ' +
+      'StoryMaker, a Windows program in C#, hands the journal to an AI of my choosing (a free ' +
+      'local model or Claude), which writes a chapter of the character\'s life as his own ' +
+      'memories, years later. I read it, edit it and post it to his story here.',
+    pageUrl: '/projects/lunar-journal',
+    links: [{ label: 'Read a chapter', url: '/wowcharacters/forever/chapter.html?c=gilded-gobsong&n=1' }],
+    gitHubUrl: 'https://github.com/Lundqwist/LunarJournal',
+  },
+  {
     title: 'My WoW characters',
     status: 'Ongoing',
     summary:

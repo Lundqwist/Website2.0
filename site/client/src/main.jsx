@@ -16,6 +16,7 @@ import Portfolio from './pages/Portfolio.jsx'
 import PortfolioItem from './pages/PortfolioItem.jsx'
 import Projects from './pages/Projects.jsx'
 import LunarMods from './pages/LunarMods.jsx'
+import LunarJournal from './pages/LunarJournal.jsx'
 import About from './pages/About.jsx'
 import NotFound from './pages/NotFound.jsx'
 
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
       { path: '/portfolio/:slug', element: <PortfolioItem /> },
       { path: '/projects', element: <Projects /> },
       { path: '/projects/lunarmods', element: <LunarMods /> },
+      { path: '/projects/lunar-journal', element: <LunarJournal /> },
       { path: '/about', element: <About /> },
       { path: '*', element: <NotFound /> },
     ],
