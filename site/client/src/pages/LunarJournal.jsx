@@ -44,7 +44,7 @@ export default function LunarJournal() {
           <div className="project-head">
             <h2 className="project-title">Lunar Journal, the addon</h2>
             <span className="mod-meta">
-              v0.1.1 · Lua · <code>/lj</code>
+              v0.1.2 · Lua · <code>/lj</code>
             </span>
           </div>
           <p className="mod-tagline">Writes down what happens while I play, so it can be told later.</p>

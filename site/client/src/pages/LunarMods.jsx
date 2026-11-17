@@ -10,7 +10,7 @@ const mods = [
   {
     id: 'lunarjournal',
     title: 'Lunar Journal',
-    version: '0.1.1',
+    version: '0.1.2',
     tagline: 'A journal of your adventures, so they can be told later.',
     gitHubUrl: 'https://github.com/Lundqwist/LunarJournal',
     portfolioSlug: 'lunar-journal',
