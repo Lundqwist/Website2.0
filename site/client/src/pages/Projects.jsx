@@ -1,18 +1,20 @@
+import { Link } from 'react-router-dom'
 import { useTitle } from '../useApi.js'
 
 // The Projects page: things I am working on right now. Finished work goes
 // on the Portfolio page instead. Add a project by adding an entry here.
 const projects = [
   {
-    title: 'MoonFrame',
-    status: 'In progress',
+    title: 'LunarMods',
+    status: 'Ongoing',
     summary:
-      'A frame for small mod parts in World of Warcraft: Forever. Instead of one big addon, every ' +
-      'feature is its own small part, written and tested on its own. MoonFrame finds the parts that ' +
-      'are installed and loads only the ones I have switched on, so a part I do not use costs nothing. ' +
-      'Written in Lua.',
-    // Shown as a button once the repository is public
-    gitHubUrl: null,
+      'My own World of Warcraft: Forever addons, written in Lua. Each mod is a small addon of its ' +
+      'own that works alone: FavoriteItems guards the items you care about, Quest XP Tracker shows ' +
+      'how far your quests take you. LunarMods ties them together with one list to switch them on ' +
+      'and off and one minimap button to run them from. The project grows as I add mods.',
+    // A page of its own on this site (a route in main.jsx)
+    pageUrl: '/projects/lunarmods',
+    gitHubUrl: 'https://github.com/Lundqwist/LunarMods',
   },
 ]
 
@@ -31,10 +33,19 @@ export default function Projects() {
               <span className="project-status">{project.status}</span>
             </div>
             <p>{project.summary}</p>
-            {project.gitHubUrl && (
-              <a className="button" href={project.gitHubUrl}>
-                Source on GitHub
-              </a>
+            {(project.pageUrl || project.gitHubUrl) && (
+              <div className="project-links">
+                {project.pageUrl && (
+                  <Link className="button" to={project.pageUrl}>
+                    Read more
+                  </Link>
+                )}
+                {project.gitHubUrl && (
+                  <a className="button" href={project.gitHubUrl}>
+                    Source on GitHub
+                  </a>
+                )}
+              </div>
             )}
           </li>
         ))}

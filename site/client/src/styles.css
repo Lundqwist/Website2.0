@@ -133,7 +133,13 @@ a:hover {
   padding: 3.5rem 2rem 4rem;
 }
 
+/* The footer always stays in view at the bottom of the window, like the
+   header at the top: on a short page it sits at the bottom, on a long page
+   it sticks to the bottom edge while the page scrolls under it. */
 .site-footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
   min-height: 3.5rem;
   padding: 0.75rem 1rem;
   background: var(--navy);
@@ -478,8 +484,69 @@ a:hover {
   margin: 0.75rem 0 0;
 }
 
-.project-card .button {
+/* The buttons under a project card or a mod on a project page */
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
   margin-top: 1.25rem;
+}
+
+/* ── A project's own page (LunarMods) ───────────────────────────────────── */
+
+.mods-head {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.mods-head .page-title {
+  margin-bottom: 0.4rem;
+}
+
+.mods-logo {
+  width: 5rem;
+  height: 5rem;
+  flex: none;
+}
+
+.mods-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin: 0 0 1rem;
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--navy-light);
+  border-bottom: 1px solid var(--navy-light);
+}
+
+.mods-toc a {
+  text-decoration: none;
+}
+
+.mod {
+  margin-top: 3rem;
+}
+
+.mod .item-image {
+  margin: 1.5rem 0 0;
+}
+
+.mod-meta {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.mod-meta code {
+  font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  color: var(--gold-soft);
+}
+
+.mod-tagline {
+  margin: 0.25rem 0 1rem;
+  color: var(--gold-soft);
+  font-style: italic;
 }
 
 .project-head {
