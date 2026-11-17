@@ -134,9 +134,46 @@ a:hover {
 }
 
 .site-footer {
-  height: 3.5rem;
+  min-height: 3.5rem;
+  padding: 0.75rem 1rem;
   background: var(--navy);
   border-top: 1px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* The contact links in a row, wrapping on narrow screens */
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--gold);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  color: var(--gold-soft);
+  text-decoration: underline;
+}
+
+.footer-icon {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  line-height: 1;
 }
 
 .page-title {
