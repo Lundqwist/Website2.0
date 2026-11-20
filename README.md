@@ -23,7 +23,6 @@ flowchart TB
     end
 
     v1["personalsite-v1 · :8091<br/>first version, MVC<br/>admin, CV PDFs"]
-    jaw["jawbreakers · :8095<br/>guild site"]
     wow["wowcharacters · :8096<br/>WoW characters"]
 
     subgraph maria["MariaDB · database personal_site"]
@@ -33,7 +32,6 @@ flowchart TB
 
     visitor -- "https://lundqwist.se" --> proxy -- "http" --> front
     yarp -- "/v1, /media, /showcase" --> v1
-    yarp -- "/jawbreakers" --> jaw
     yarp -- "/wowcharacters" --> wow
     api -- "EF Core" --> own
     api -. "reads the About text" .-> shared
@@ -52,21 +50,21 @@ sequenceDiagram
     participant S as personalsite
     participant D as MariaDB
 
-    V->>S: GET /portfolio/jawbreakers
+    V->>S: GET /portfolio/lunar-journal
     S-->>V: index.html (no-cache), the fallback for every page address
     V->>S: GET /assets/index-[hash].js
     S-->>V: the React app (cached for a year: the name changes with every build)
     Note over V: React Router shows the PortfolioItem page
-    V->>S: GET /api/portfolio/jawbreakers
+    V->>S: GET /api/portfolio/lunar-journal
     S->>D: the row with that slug
     D-->>S: title, summary, links, Body
-    Note over S: Body empty? read Content/portfolio/jawbreakers.md<br/>Markdown → HTML (Markdig) → sanitised (HtmlSanitizer)
+    Note over S: Body empty? read Content/portfolio/lunar-journal.md<br/>Markdown → HTML (Markdig) → sanitised (HtmlSanitizer)
     S-->>V: JSON with bodyHtml
 ```
 
 - **`site/`** is one small ASP.NET Core app (`Program.cs`). It answers `/api/portfolio`,
   `/api/portfolio/{slug}` and `/api/about`, serves the built React app from `wwwroot/`,
-  and passes `/v1/...`, `/jawbreakers/...` and `/wowcharacters/...` on to the other apps with YARP.
+  and passes `/v1/...` and `/wowcharacters/...` on to the other apps with YARP.
 - **`site/client/`** is the React app (Vite, React Router). Pages are in `src/pages`,
   the look of the whole site is in `src/styles.css`.
 - **`v1/`** runs unchanged except for one setting, `PathBase=/v1`, which makes all its
