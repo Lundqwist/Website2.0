@@ -305,7 +305,7 @@ Visitor ──https──► DSM reverse proxy (lundqwist.se:443, Let's Encrypt)
                   MariaDB 10 package (192.168.50.2:3306)
 ```
 
-Files on the NAS, in `/volume1/docker/personalsite/` (`\\LUNARBASE\docker\personalsite`, or `Z:\personalsite` with the mapped drive):
+Files on the NAS, in `/volume1/docker/personalsite/` (`\\LUNARBASE\docker\personalsite`, or `Q:\personalsite` with the mapped drive):
 
 | File / folder | Content |
 |---|---|
