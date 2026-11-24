@@ -51,6 +51,7 @@ const projects = [
       'cited research reports from the web, and has a voice assistant I wake with "Hey Luna", in ' +
       'English or Swedish. The assistant can run the TV, read my tasks and check my servers, and ' +
       'it asks on screen before anything more. Test suites with promptfoo keep the answers honest.',
+    pageUrl: '/projects/ai-workbench',
     gitHubUrls: [{ label: 'View on GitHub', url: 'https://github.com/Lundqwist/AiProjects' }],
   },
   {
