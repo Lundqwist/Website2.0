@@ -82,14 +82,15 @@ const tools = [
           <li>
             <b>Songs with singing:</b> the writing model writes rhyming lyrics with verses and a
             chorus (or I paste my own), and{' '}
-            <a href="https://github.com/ACE-Step/ACE-Step-1.5">ACE-Step 1.5</a> sings and plays a
-            1–3 minute song, in about 30 seconds per minute of song
+            <a href="https://github.com/ACE-Step/ACE-Step-1.5">ACE-Step 1.5</a> sings and plays it,
+            as long as the lyrics need, in about 30 seconds per minute of song
           </li>
           <li>
             <b>Movies:</b> narrated short films from one sentence. The writing model writes a
-            screenplay, every scene is painted in the same style with the same characters, a Piper
-            voice narrates it, MusicGen scores it, and ffmpeg puts it together with slow camera
-            moves, crossfades, a title and subtitles. A one-minute film takes under three minutes
+            screenplay, every scene is painted in the same style with the same characters, and{' '}
+            <a href="https://huggingface.co/Lightricks/LTX-Video">LTX-Video</a> brings each one to
+            life as real video. A Piper voice narrates it, MusicGen scores it, and ffmpeg puts it
+            together with crossfades, a title and subtitles. A 40-second film takes 7–8 minutes
           </li>
         </ul>
         <p>
@@ -99,7 +100,7 @@ const tools = [
       </>
     ),
     image: '9-movie.jpg',
-    alt: 'Four frames from a movie the workbench made from one sentence: title card, subtitles and the same keeper in every scene',
+    alt: 'Four frames from a movie the workbench made from one sentence: the title, and a fox cub that walks through the snow and finds its way home under the northern lights, with subtitles',
   },
   {
     id: 'tv',
@@ -246,7 +247,7 @@ export default function AiWorkbench() {
             <p>
               Python 3.12 · PySide6 (Qt 6) · Ollama (<code>gemma3:12b</code>, <code>qwen3:8b</code>,{' '}
               <code>nomic-embed-text</code>) · ChromaDB · faster-whisper · Piper · PyTorch + diffusers
-              (SDXL-Turbo, MusicGen) · ACE-Step 1.5 · ffmpeg · promptfoo · uv
+              (SDXL-Turbo, MusicGen, LTX-Video) · ACE-Step 1.5 · ffmpeg · promptfoo · uv
             </p>
             <p>
               Inside are five projects that also run on their own: a RAG document assistant, a voice
