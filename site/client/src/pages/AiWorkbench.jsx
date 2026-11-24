@@ -90,7 +90,9 @@ const tools = [
             screenplay, every scene is painted in the same style with the same characters, and{' '}
             <a href="https://huggingface.co/Lightricks/LTX-Video">LTX-Video</a> brings each one to
             life as real video. A Piper voice narrates it, MusicGen scores it, and ffmpeg puts it
-            together with crossfades, a title and subtitles. A 40-second film takes 7–8 minutes
+            together with crossfades, a title and subtitles. I can read and change the screenplay
+            before it's filmed, and turn narration, subtitles and music on or off; a silent film gets
+            title cards instead of a narrator. A 40-second film takes 4–8 minutes
           </li>
         </ul>
         <p>
