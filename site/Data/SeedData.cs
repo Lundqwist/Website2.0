@@ -38,6 +38,12 @@ public static class SeedData
         "Pi-hole, websites and services, network, camera, weather and news, driven by the remote. Plain HTML, CSS " +
         "and JavaScript for the TV's older browser engine, fed by a read-only Network Dashboard server in Docker.";
 
+    // Added on 2026-11-24 (migration AiWorkbenchPortfolioItem); longer text in Content/portfolio/ai-workbench.md.
+    public const string AiWorkbenchSummary =
+        "A Windows program in Python (PySide6) that runs AI entirely on my own PC with Ollama: answers from my own " +
+        "documents with sources, invoices read into checked rows, cited research reports from the web, and a voice " +
+        "assistant woken with \"Hey Luna\" that asks on screen before doing anything more. Tested with promptfoo.";
+
     public static async Task EnsureSeededAsync(SiteDbContext db)
     {
         if (await db.PortfolioItems.AnyAsync()) return;
@@ -102,6 +108,18 @@ public static class SeedData
                 GitHubUrl = "https://github.com/Lundqwist/TvDashboard",
                 Date = new DateOnly(2026, 11, 23),
                 SortOrder = 60,
+            },
+            new PortfolioItem
+            {
+                Slug = "ai-workbench",
+                Title = "AI Workbench",
+                Summary = AiWorkbenchSummary,
+                ImageUrl = "/images/portfolio/ai-workbench.jpg",
+                GitHubUrl = "https://github.com/Lundqwist/AiProjects",
+                LinkUrl = "/projects/ai-workbench",
+                LinkLabel = "About the project",
+                Date = new DateOnly(2026, 11, 24),
+                SortOrder = 65,
             },
             new PortfolioItem
             {
