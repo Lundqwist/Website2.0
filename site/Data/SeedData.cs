@@ -22,6 +22,22 @@ public static class SeedData
         "Markdown with a live preview, add screenshots from the game and sounds, then post it as the next chapter " +
         "on the WoW characters pages, or save it on your PC.";
 
+    // Added on 2026-11-24 (migration LatestProjectsNoCourseWork); longer texts in Content/portfolio.
+    public const string LundqwistSeSummary =
+        "This site: a React (Vite) front end on a C# / ASP.NET Core 8 minimal API with Entity Framework Core and " +
+        "MariaDB. It also acts as the front door for my other apps, passing their addresses on with YARP, and keeps " +
+        "the first version of the site running under /v1. Self-hosted in Docker on a Synology NAS.";
+
+    public const string WowCharactersSummary =
+        "Pages for my World of Warcraft characters, retail and WoW: Forever: picture, gear, stats and professions " +
+        "read live from Blizzard's official API (OAuth2, cached an hour), a crafting page with every known recipe, " +
+        "and each character's story told in chapters. ASP.NET Core 8 with plain HTML, CSS and JavaScript.";
+
+    public const string HomeLabTvSummary =
+        "A Samsung Smart TV (Tizen) app that puts my home lab on the living-room TV: Raspberry Pi and NAS health, " +
+        "Pi-hole, websites and services, network, camera, weather and news, driven by the remote. Plain HTML, CSS " +
+        "and JavaScript for the TV's older browser engine, fed by a read-only Network Dashboard server in Docker.";
+
     public static async Task EnsureSeededAsync(SiteDbContext db)
     {
         if (await db.PortfolioItems.AnyAsync()) return;
@@ -55,40 +71,37 @@ public static class SeedData
             },
             new PortfolioItem
             {
-                Slug = "smart-asset-tracking",
-                Title = "Smart Asset Tracking",
-                Summary = "A menu-driven C# / .NET 10 console application for tracking company assets (laptops, phones, " +
-                          "office equipment) across offices in several countries and currencies, with logins and roles, " +
-                          "a dashboard, reports and exports. Built with Entity Framework Core and SQL Server Express.",
-                ImageUrl = "/images/portfolio/smart-asset-tracking.png",
-                GitHubUrl = "https://github.com/Lundqwist/Smart-Asset-Tracking",
-                Date = new DateOnly(2026, 11, 11),
-                SortOrder = 25,
-            },
-            new PortfolioItem
-            {
-                Slug = "sql-first",
-                Title = "SQL First: School Manager",
-                Summary = "A C# / .NET 10 console application that manages a school's programs, courses and students " +
-                          "with hand-written SQL against SQL Server Express: joins, parameterised queries, search, " +
-                          "add and remove, and a setup script that creates the database with sample data.",
-                ImageUrl = "/images/portfolio/sql-first.png",
-                GitHubUrl = "https://github.com/Lundqwist/SQL_First",
-                Date = new DateOnly(2026, 11, 6),
-                SortOrder = 27,
-            },
-            new PortfolioItem
-            {
-                Slug = "package-tracking",
-                Title = "Package Tracking",
-                Summary = "A team project from the Lexicon full-stack course: a package tracking site in English " +
-                          "and Swedish with a map, delivery estimate and progress tracker, in plain HTML, CSS and JavaScript.",
-                ImageUrl = "/images/portfolio/package-tracking.jpg",
-                GitHubUrl = "https://github.com/Lundqwist/PackageTrackingTeamBlue",
-                LinkUrl = "https://lundqwist.github.io/PackageTrackingTeamBlue/",
-                LinkLabel = "Open the page",
-                Date = new DateOnly(2026, 9, 30),
+                Slug = "lundqwist-se",
+                Title = "lundqwist.se",
+                Summary = LundqwistSeSummary,
+                ImageUrl = "/images/portfolio/lundqwist-se.jpg",
+                GitHubUrl = "https://github.com/Lundqwist/Website2.0",
+                LinkUrl = "/",
+                LinkLabel = "Open the site",
+                Date = new DateOnly(2026, 11, 13),
                 SortOrder = 30,
+            },
+            new PortfolioItem
+            {
+                Slug = "wow-characters",
+                Title = "WoW characters",
+                Summary = WowCharactersSummary,
+                ImageUrl = "/images/portfolio/wow-characters.jpg",
+                GitHubUrl = "https://github.com/Lundqwist/WowCharacters",
+                LinkUrl = "/wowcharacters/",
+                LinkLabel = "Open the pages",
+                Date = new DateOnly(2026, 11, 17),
+                SortOrder = 52,
+            },
+            new PortfolioItem
+            {
+                Slug = "home-lab-tv",
+                Title = "Home Lab TV app",
+                Summary = HomeLabTvSummary,
+                ImageUrl = "/images/portfolio/home-lab-tv.jpg",
+                GitHubUrl = "https://github.com/Lundqwist/TvDashboard",
+                Date = new DateOnly(2026, 11, 23),
+                SortOrder = 60,
             },
             new PortfolioItem
             {
