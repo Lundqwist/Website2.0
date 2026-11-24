@@ -69,6 +69,39 @@ const tools = [
     alt: "The Research tab: the agent's steps, the check and the finished report with sources",
   },
   {
+    id: 'create',
+    title: 'Create',
+    tagline: 'Pictures, music, songs, stories and movies.',
+    text: (
+      <>
+        <p>
+          Describe an idea in English or Swedish and it is made on this PC: pictures with
+          SDXL-Turbo, short tunes with MusicGen and stories by the writing model.
+        </p>
+        <ul>
+          <li>
+            <b>Songs with singing:</b> the writing model writes rhyming lyrics with verses and a
+            chorus (or I paste my own), and{' '}
+            <a href="https://github.com/ACE-Step/ACE-Step-1.5">ACE-Step 1.5</a> sings and plays a
+            1–3 minute song, in about 30 seconds per minute of song
+          </li>
+          <li>
+            <b>Movies:</b> narrated short films from one sentence. The writing model writes a
+            screenplay, every scene is painted in the same style with the same characters, a Piper
+            voice narrates it, MusicGen scores it, and ffmpeg puts it together with slow camera
+            moves, crossfades, a title and subtitles. A one-minute film takes under three minutes
+          </li>
+        </ul>
+        <p>
+          Every creation is saved with a record of which model made it and where. The voice
+          assistant can do all of it too: "make a movie about a lighthouse keeper and a whale".
+        </p>
+      </>
+    ),
+    image: '9-movie.jpg',
+    alt: 'Four frames from a movie the workbench made from one sentence: title card, subtitles and the same keeper in every scene',
+  },
+  {
     id: 'tv',
     title: 'TV',
     tagline: 'Wake it, pick a channel, use a remote.',
@@ -155,8 +188,8 @@ export default function AiWorkbench() {
         </div>
 
         <p className="item-summary">
-          Local AI on my own PC: documents, voice, invoices, research and more. No cloud, no API
-          keys. A Windows program in Python that runs five AI projects entirely on one PC with
+          Local AI on my own PC: documents, voice, invoices, research, songs, movies and more. No
+          cloud, no API keys. A Windows program in Python that runs five AI projects entirely on one PC with
           Ollama, on an RTX 3080 Ti with 12 GB.
         </p>
 
@@ -170,7 +203,8 @@ export default function AiWorkbench() {
         <div className="prose">
           <p>
             It answers questions from my own documents with sources, turns invoice PDFs and photos
-            into checked spreadsheet rows, writes cited research reports from the web, and has a
+            into checked spreadsheet rows, writes cited research reports from the web, makes songs
+            with singing and narrated short movies from one sentence, and has a
             voice assistant I wake with "Hey Luna", in English or Swedish. The assistant can run the
             TV, read my tasks and check my servers, and it asks on screen before doing anything
             more. Test suites with promptfoo keep the answers honest.
@@ -211,7 +245,8 @@ export default function AiWorkbench() {
           <div className="prose">
             <p>
               Python 3.12 · PySide6 (Qt 6) · Ollama (<code>gemma3:12b</code>, <code>qwen3:8b</code>,{' '}
-              <code>nomic-embed-text</code>) · ChromaDB · faster-whisper · Piper · promptfoo · uv
+              <code>nomic-embed-text</code>) · ChromaDB · faster-whisper · Piper · PyTorch + diffusers
+              (SDXL-Turbo, MusicGen) · ACE-Step 1.5 · ffmpeg · promptfoo · uv
             </p>
             <p>
               Inside are five projects that also run on their own: a RAG document assistant, a voice

@@ -38,11 +38,13 @@ public static class SeedData
         "Pi-hole, websites and services, network, camera, weather and news, driven by the remote. Plain HTML, CSS " +
         "and JavaScript for the TV's older browser engine, fed by a read-only Network Dashboard server in Docker.";
 
-    // Added on 2026-11-24 (migration AiWorkbenchPortfolioItem); longer text in Content/portfolio/ai-workbench.md.
+    // Added on 2026-11-24 (migration AiWorkbenchPortfolioItem), updated the same day for songs and movies
+    // (migration AiWorkbenchCreateSummary); longer text in Content/portfolio/ai-workbench.md.
     public const string AiWorkbenchSummary =
         "A Windows program in Python (PySide6) that runs AI entirely on my own PC with Ollama: answers from my own " +
-        "documents with sources, invoices read into checked rows, cited research reports from the web, and a voice " +
-        "assistant woken with \"Hey Luna\" that asks on screen before doing anything more. Tested with promptfoo.";
+        "documents with sources, invoices read into checked rows, cited research reports from the web, songs with " +
+        "singing and narrated short movies made from one sentence, and a voice assistant woken with \"Hey Luna\" " +
+        "that asks on screen before doing anything more. Tested with promptfoo.";
 
     public static async Task EnsureSeededAsync(SiteDbContext db)
     {

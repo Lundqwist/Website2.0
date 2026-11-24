@@ -48,7 +48,8 @@ const projects = [
       'A Windows program in Python (PySide6), dressed in this site\'s navy and gold, that runs AI ' +
       'entirely on my own PC with Ollama: no cloud, no API keys. It answers questions from my own ' +
       'documents with sources, turns invoice PDFs and photos into checked spreadsheet rows, writes ' +
-      'cited research reports from the web, and has a voice assistant I wake with "Hey Luna", in ' +
+      'cited research reports from the web, makes songs with singing and narrated short movies from ' +
+      'one sentence, and has a voice assistant I wake with "Hey Luna", in ' +
       'English or Swedish. The assistant can run the TV, read my tasks and check my servers, and ' +
       'it asks on screen before anything more. Test suites with promptfoo keep the answers honest.',
     pageUrl: '/projects/ai-workbench',
